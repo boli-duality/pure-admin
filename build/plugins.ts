@@ -17,7 +17,9 @@ export function getPluginsList(command, VITE_LEGACY) {
   const prodMock = true;
   const lifecycle = process.env.npm_lifecycle_event;
   return [
-    vue(),
+    vue({
+      reactivityTransform: true
+    }),
     // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
     VueI18n({
       runtimeOnly: true,
